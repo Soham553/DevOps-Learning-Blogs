@@ -44,4 +44,35 @@ Linux File System Hierachy:
     - For example: /dev/ttyl, /dev/usbmon0
 
 
+/var : Variable Files
+    - The variable data files such as log files are located in the /var directory.
+    - File contents that tend to grow are located in this directory
+    - /var/log :
+    - /var/lib :
+    - /var/tmp :
 
+/mnt : Mount Directroy
+    - This directory is used to mount a file system temporarily.
+
+/media : Removable Media Devices
+    - The /media directory contains subdirectories where removable media devices inserted into the computer are mounted
+
+/usr : User Binaries
+    - The /usr directory contains applications and files used by users, as opposed to applications and files used by the system.
+
+/etc : Configuration files
+    - It contains all configuration files of server 
+    - The core configuration files are stored in the /etc directory. It controls the behavior of an operating system or application.
+
+/boot : Boot loader Files
+    - The /boot directory contains the files needed to boot the system 
+    - For example: GRUB boot loader's files 
+
+/opt : Optional Applications
+    - The opt direcroy is used for installing the application software from third party vendors that are not available in the linux distribution.
+
+/home : Home Directory
+    - It contains secondary users home directory
+
+/tmp ; Temporary Files
+    - Contains temporary files created by system and users.
