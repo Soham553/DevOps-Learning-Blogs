@@ -97,9 +97,29 @@ The key components of systemd:
         - Unit files are configuration files that tell systemd how to manage different resources like services, sockets, mounts, 
           and timers.  
         - Types of Unit files:
-            1. Service Units (.service)  
-            2. Target Units (.target)
-            3. Socket Units (.socket)
-            4. Mount Units (.mount)
-            5. Timer Units (.timer)                   
+            1. Service Units (.service): Defines how to mange a service or application, including how to start, stop, and automatically start it.  
+            2. Target Units (.target): Targets ensure that the necessary services and resources are running to achieve a specific operational state.
+            3. Socket Units (.socket): Information about sockets which port is used by which service.
+            4. Mount Units (.mount): Defines a specific filesystem mount point. These units are named after their mount path
+            5. Timer Units (.timer): Defines a service to run after perticular time    
+
+- We will see how to list services               
    
+   - systemctl list-units
+   - systemctl list-timers
+   - systemctl list-sockets
+   - systemctl list-units --type=target
+
+- We can create our own Service 
+
+
+# Journald 
+
+- It is like a Database which stores log of services system live 
+- We can access these log using journalctl cmd
+
+     - journalctl -u : It will print all the log 
+     - journalctl -n 20: Prints 20 log live
+     - sudo journalctl -u <service_name> : prints all the log related to service
+    
+
