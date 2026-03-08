@@ -1,17 +1,18 @@
 What Volume management?
 
-When we creat instance EC2 for an example on AWS, we get min 8Gb internel volume. 
-We can add or extend volume of a instance using EBS.
+When we create an EC2 instance for an example on AWS, we get min 8Gb internel volume. 
+We can add or extend the volume of an instance using EBS.
 
 EBS stands for Elastic Block Store.
 
-Elastic: Give use elaticity we can decide size of volume as per our use.
+Elastic: Give use elaticity we can decide size of the volume as per our use.
 Block: Block of storage.
 
-There is alwayes one block of storage/volume with instance.
-     -lsblk: List block use to list blocks 
+There is always one block of storage/volume with an instance.
+
+     -lsblk: List block usage to list blocks 
             lsblk
-        NAME            MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
+        NAME            MAJ: MIN RM  SIZE RO TYPE MOUNTPOINTS
         loop0             7:0    0 27.8M  1 loop /snap/amazon-ssm-agent/12322
         loop1             7:1    0 50.9M  1 loop /snap/snapd/25577
         loop2             7:2    0 27.6M  1 loop /snap/amazon-ssm-agent/11797
@@ -41,41 +42,41 @@ There is alwayes one block of storage/volume with instance.
     tmpfs             92M   12K   92M   1% /run/user/1000
     root@ip-172-31-38-27:/#
 
-- We have to create volume and then need to attach and then have to mount with instance
+- We have to create a volume and then need to attach and then mount it with the instance
 
 1. Create volume 
 2. Attach it with instance.
-3. Mount it in root directory.
+3. Mount it in the root directory.
 
--we can access that memory block only if it is mounted.
+-We can access that memory block only if it is mounted.
 
-- There are three tecnical state volumes in linux
+- There are three technical state volumes in Linux
    1. Physical volume
    2. Volume Group
    3. Logical Volumes
 
-Logical Volume Manager: a tool use to handle all the operations telated to the volume management.
+Logical Volume Manager: a tool use to handle all the operations telated to volume management.
 
-1. Physical Volume: when we create EBS as follow in EC2 instance 
+1. Physical Volume: When we create EBS as follows in an EC2 instance 
           
           Elastic Block Store(Section) -> Volumes -> Create Volume -> Attach it to instance 
     
-    then the volume is called Physical volume.
-    After attaching we can see list of volumes using:
+    Then the volume is called Physical volume.
+    After attaching, we can see the list of volumes using:
     ~$ lsblk or
     ~$ df -h
     ~$ pv display
 
 2. Volume Group: 
-    - When we combine two or more physical volume togater then it is called as a volume group.
-    - We can create group using following commands.
+    - When we combine two or more physical volume togater then it is called a volume group.
+    - We can create a group using the following commands.
     - ~$ vgcreate gr_name path_to_pv1 path_to_pv2   (PV-Physical volume)
     - We can list volume groups using
        ~$ vg or
        ~$ vg display
 
 3. Logical Volume:
-    - Initializing small portion of volume group for a particular process is called logical volume.
+    - Initializing a small portion of a volume group for a particular process is called a logical volume.
     - We can initialize logical volume(LV) using following command.
 
     - "~$ lvcreate -L size_of_lv -n name_of_lv name_of_group"
@@ -83,7 +84,7 @@ Logical Volume Manager: a tool use to handle all the operations telated to the v
     - To list the Logical Volume:
         ~$ lv display
 
-- Heirarchi looks as fall
+- Hierarchi looks as fall
            
               Physical Volume(PV) 1-
                                     |                         -----> Logical Volume 1
