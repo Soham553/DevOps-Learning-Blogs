@@ -6,73 +6,52 @@ Linux File System Hierarchy:
 
 - Root Direvtory represents with '/'; it is a top-level directory in Linux.
 
-                                   '/'
-                                    |
-                                    |
-    ---------------------------------------------------------------------
-    |       |      |      |      |      |      |     |     |     |      |
-    |       |      |      |      |      |      |     |     |     |      |
-  /root    /mnt  /home  /media  /bin   /usr  /sbin  /etc  /dev  /opt   /var 
+  ![Diagram](https://github.com/Soham553/90DaysOfDevOps/blob/master/2026/day-07/image.png)
 
+  - We will start one by one
 
-/ :
+  1. /bin:
+        - permission bits for /bin are: lrwxrwxrwx, which points to /bin -> usr/bin
+        - It contains all the essential user commands.
     
-    - The base of the Linux directory is the root. This is the starting point of FSH. Every directory arises from the root directory. It is represented by a forward slash(/).
-    - If someone says to look into the slash directory, they refer to the root directory.
+  2. /boot:
+         - permission bits for /boot are: drwxr-xr-x, which is a directory.
+         - It contains Files and folders related to the Boot process.
+         - efi, grub
 
+  3. /dev:
+         - permission bits for /dev are: drwxr-xr-x, directory.
+         - It contains devices like character devices and block devices.
 
-/root : 
-    - It is the home directory for the root user(superuser).
+  4. /etc:
+         - It contains .conf files for different services.
+         - Manages all the OS functionality from networking to shutdown.
+         - Eg. lvm.conf.
 
+  5. /home:
+         - It contains all the non-root users.
 
-/bin: User Binaries
-    - Contains a binary executable.
-    - Common Linux commands you need to use in single-user modes are located under this directory.
-    - Commands used by all the users of the system are located here.
+  6. /lib:
+         - permission bits for /lib are: lrwxrwxrwx, which is sysmbolic link lib -> usr/lib
+         - It contains shared libraries and kernel modules.
 
+  8. /media:
+          - Contains removable Media devices
+          - External devices are mounted in the /media directory.
+     
+  9. /mnt:
+          - Act as a mounting point for the other file systems
+          - Eg. Physical Volume
 
-/sbin: SystemBinaries
-    - Just like /bin, /sbin also contains binary executables.
-    - But, the Linux commands located under this directory are typically used by system administrators, for system maintenace purpose.
-    - For example: iptables, reboot, fdisk, ifconfig, swapon
+ 10. /opt:
+          - Used to install third party application which are not included by default in the OS
+          - Eg, Google, Spotify.
 
+ 11. /proc:
+          - It is like a virtual file system
+          - It is like a live tracking system for Kernel.
 
-/dev: Device Files
-    - It contains hardware device files
-    - Contains device files.
-    - These include terminal devices, USB, or any device attached to the system.
-    - For example: /dev/ttyl, /dev/usbmon0
-
-
-/var: Variable Files
-    - The variable data files, such as log files, are located in the /var directory.
-    - File contents that tend to grow are located in this directory
-    - /var/log :
-    - /var/lib :
-    - /var/tmp :
-
-/mnt: Mount Directory
-    - This directory is used to mount a file system temporarily.
-
-/media: Removable Media Devices
-    - The /media directory contains subdirectories where removable media devices inserted into the computer are mounted
-
-/usr: User Binaries
-    - The /usr directory contains applications and files used by users, as opposed to applications and files used by the system.
-
-/etc: Configuration files
-    - It contains all the configuration files of the server 
-    - The core configuration files are stored in the /etc directory. It controls the behavior of an operating system or application.
-
-/boot: Boot Loader Files
-    - The /boot directory contains the files needed to boot the system 
-    - For example: GRUB boot loader's files 
-
-/opt: Optional Applications
-    - The opt directory is used for installing the application software from third-party vendors that are not available in the Linux distribution.
-
-/home: Home Directory
-    - It contains the secondary user's home directory
-
-/tmp ; Temporary Files
-    - Contains temporary files created by the system and users.
+ 12. /root:
+           - Home director for super user.
+           - Permission bits for /root are: drwx------, which is a directory
+           - Accessible by Owner.
