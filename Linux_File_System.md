@@ -43,15 +43,15 @@ Linux File System Hierarchy:
           - Act as a mounting point for the other file systems
           - Eg. Physical Volume
 
- 10. /opt:
+  10. /opt:
           - Used to install third party application which are not included by default in the OS
           - Eg, Google, Spotify.
 
- 11. /proc:
+  11. /proc:
           - It is like a virtual file system
           - It is like a live tracking system for Kernel.
 
- 12. /root:
+  12. /root:
            - Home director for super user.
            - Permission bits for /root are: drwx------, which is a directory
            - Accessible by Owner.
