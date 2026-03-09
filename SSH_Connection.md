@@ -3,24 +3,30 @@
    Step 1: Name and tags
    
       - Give the name, for instance
+      
    Step 2: OS Image
    
       - As per your choice, the OS for your server.
+      
    Step 3: Instance type
    
       - It determines the hardware of the host computer.
       - Each instance type offers different compute, memory, and storage capabilities.
+      
    Step 4: Key Pair 
    
       - Create a key pair that is used to connect server through ssh
       - It creates two keys: one is a private key, and the other is a public key.
+      
   Step 5: Network settings
   
       - Create a security group
       - Allow ssh traffic from anywhere
+      
   Step 6: Configure storage
   
       - As per your usage
+      
   Step 7: Launch the instance.
 
 # Connecting instance through SSH

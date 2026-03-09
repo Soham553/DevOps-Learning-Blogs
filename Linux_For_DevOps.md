@@ -61,7 +61,8 @@ Now let's Understand linux boot process:
 
 
 #Systemd:
-     - It is both an init system and a service manager for most of the Linux-based systems
+
+     - It is both an init system and a service manager for most of the Linux-based systems 
      - An init system (short for initialization) is the first program that runs when you turn on your computer. It has the special 
        process ID of 1 and is responsible for starting everything else on your computer.
      - A service manager, on the other hand, handles starting, stopping, and monitoring the programs (called services) that run in 
@@ -72,7 +73,8 @@ Now let's Understand linux boot process:
        graphics. target for desktops.
 
 The key components of systemd:
-    1. systemctl: 
+
+    1. systemctl:     
         - It is command line interface which use to interact with systemd
         - It used to start, stop, enable, disable, and check the status of services and other units.
 
@@ -97,9 +99,9 @@ The key components of systemd:
         - Unit files are configuration files that tell systemd how to manage different resources like services, sockets, mounts, 
           and timers.  
         - Types of Unit files:
-            1. Service Units (.service): Defines how to mange a service or application, including how to start, stop, and automatically start it.  
+            1. Service Units (.service): Defines how to manage a service or application, including how to start, stop, and automatically start it.  
             2. Target Units (.target): Targets ensure that the necessary services and resources are running to achieve a specific operational state.
-            3. Socket Units (.socket): Information about sockets which port is used by which service.
+            3. Socket Units (.socket): Information about sockets, which port is used by which service.
             4. Mount Units (.mount): Defines a specific filesystem mount point. These units are named after their mount path
             5. Timer Units (.timer): Defines a service to run after perticular time    
 
@@ -115,8 +117,8 @@ The key components of systemd:
 
 # Journald 
 
-- It is like a Database which stores log of services system live 
-- We can access these log using journalctl cmd
+- It is like a Database which stores a log of services system's live 
+- We can access these logs using the journalctl cmd
 
      - journalctl -u : It will print all the log 
      - journalctl -n 20: Prints 20 log live
