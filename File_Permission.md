@@ -3,7 +3,7 @@
   - File Creation and writing in a file commands
 
           - touch file_name: create file
-          - vim file_name: To open a file in the editor. (If the file is present, it will open in the editor; if not, it will be created.
+          - vim file_name: To open a file in the editor. (If the file is present, it will open in the editor; if not, it will be created).
           - ls -l file_name: To check the file permission bits and owner.
           - cat file_name: To print the content of the file in the current window.
           - head -n: Prints the first n lines of the file.
